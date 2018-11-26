@@ -22,7 +22,11 @@ class Follower
   end
 
   def join_cult(cult)
-    BloodOath.new(self, cult)
+    if self.age >= cult.minimum_age
+      BloodOath.new(self, cult)
+    else
+      puts "NO. You're underage."
+    end
   end
 
   def self.of_a_certain_age(age)
@@ -46,6 +50,13 @@ class Follower
     array.map do |followers|
       followers[0]
     end
+  end
+
+  def fellow_cult_members
+    common_cults = BloodOath.all.select do |oath|
+      (self.cults.include?(oath.cult) && oath.follower != self)
+    end
+    common_cults.map {|cult| cult.follower }.uniq
   end
 
 end

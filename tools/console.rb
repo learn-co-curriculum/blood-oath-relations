@@ -13,9 +13,9 @@ f2 = Follower.new("Thao", 15, "I'll")
 f3 = Follower.new("Agamy", 20, "do it")
 f4 = Follower.new("Pham", 15, "I'll")
 # initialize(name, founding_year, location, slogan)
-c1 = Cult.new("Arabs", 2005, "Cairo", "Pyramids are cool")
-c2 = Cult.new("Vietnamese", 2015, "Saigon", "We love food")
-c3 = Cult.new("American", 2017, "Saigon", "We love Music")
+c1 = Cult.new("Arabs", 2005, "Cairo", "Pyramids are cool", 16)
+c2 = Cult.new("Vietnamese", 2015, "Saigon", "We love food", 18)
+c3 = Cult.new("American", 2017, "Saigon", "We love Music", 21)
 
 
 # initialize(initiation_date, follower, cult)
