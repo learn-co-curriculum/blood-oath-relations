@@ -42,7 +42,7 @@ class Follower
   def self.top_ten
     hash = Hash.new(0)
     BloodOath.all.each { |oath| hash[oath.follower] += 1}
-    array = hash.sort_by { |k, v| v}[-3..-1]
+    array = hash.sort_by { |k, v| v}[-10..-1]
     array.map do |followers|
       followers[0]
     end
