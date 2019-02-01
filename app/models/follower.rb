@@ -15,6 +15,10 @@ class Follower
     @@all
   end
 
+  def join_cult(cult)
+    @cults << cult.name
+  end
+
   def self.of_a_certain_age(age)
     # age_array = []
     @@all.select do |person|

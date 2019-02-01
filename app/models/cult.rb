@@ -15,7 +15,7 @@ class Cult
   end
 
   def recruit_follower(follower)
-    @followers << follower.name
+    @followers << follower
   end
 
   def self.all
