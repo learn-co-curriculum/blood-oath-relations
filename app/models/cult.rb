@@ -38,5 +38,28 @@ class Cult
     end
   end
 
+  def get_all_my_cults
+    BloodOath.all.select do |bloodoath|
+      bloodoath.cult == self
+    end
+  end
+
+  def get_all_ages
+    @total_age = 0
+    self.get_all_my_cults.each do |cult|
+      @total_age += cult.follower.age
+    end
+    @total_age
+  end
+
+  def average_age
+    self.get_all_ages / self.get_all_my_cults.count
+  end
+
+  def my_followers_mottos
+    self.get_all_my_cults.select do |blood_oath_cult_instance|
+      blood_oath_cult_instance.life_moto
+    end
+  end
 
 end

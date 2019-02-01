@@ -17,6 +17,8 @@ cult2 = Cult.new("c2", "l2", "1923-01-03", "wisdom")
 
 bo1 = BloodOath.new(cult1, foll1, "2019-02-01")
 bo2 = BloodOath.new(cult2, foll2, "2018-06-09")
+bo3 = BloodOath.new(cult1, foll3, "2018-06-09")
+
 
 binding.pry
 

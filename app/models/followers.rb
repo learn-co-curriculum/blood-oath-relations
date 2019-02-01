@@ -1,7 +1,7 @@
 class Followers
 
   attr_accessor :name, :age, :life_moto
-
+ 
   @@all = []
 
   def initialize(name, age, life_moto)
