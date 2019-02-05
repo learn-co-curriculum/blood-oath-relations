@@ -61,6 +61,21 @@ class Follower
     active.keys.sort_by {|follower| active[follower]}.slice(0,10)
   end
 
+  def fellow_cult_members
+    cult_members = []
+    self.cults.each do |my_cult|
+      BloodOath.all.each do |bloodo|
+        # binding.pry
+        if bloodo.cult == my_cult && bloodo.follower != self
+          cult_members << bloodo.follower
+        end
+      end
+    end
+    cult_members.uniq
+  end
+
+  
+
 
 end
 
