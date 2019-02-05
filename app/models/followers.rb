@@ -74,7 +74,13 @@ class Follower
     cult_members.uniq
   end
 
-  
+  def join_cult(cult)
+    if self.age < cult.minimum_age
+      puts "You are too young. Try again in a few years!"
+    else
+      BloodOath.new(cult, self, Time.now.strftime("%Y-%m-%d"))
+    end 
+  end
 
 
 end

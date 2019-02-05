@@ -81,6 +81,23 @@ class Cult
     binding.pry
   end
 
+  def minimum_age
+    age = {}
+    BloodOath.all.each do |bloodo|
+      age[bloodo.follower] = bloodo.follower.age
+    end
+    # binding.pry
+    age.keys.sort_by {|follower| age[follower]}.first.age
+  end
+
+  def recruit_follower(follower)
+    if follower.age < self.minimum_age
+      puts "You are too young. Try again in a few years!"
+    else
+      BloodOath.new(self, follower, Time.now)
+    end
+  end
+
 
 end
 
