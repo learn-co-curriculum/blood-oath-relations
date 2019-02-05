@@ -8,9 +8,9 @@ end
 # so they will be available to test and play around with in your console
 
 
-foll1 = Followers.new("f1", 20, "LIVEYOURLIFE!")
-foll2 = Followers.new("f2", 60, "still livin")
-foll3 = Followers.new("f3", 35, "almost at midlife crisis")
+foll1 = Follower.new("f1", 20, "LIVEYOURLIFE!")
+foll2 = Follower.new("f2", 60, "still livin")
+foll3 = Follower.new("f3", 35, "almost at midlife crisis")
 
 cult1 = Cult.new("c1", "l1", "1990-01-03", "come join")
 cult2 = Cult.new("c2", "l2", "1923-01-03", "wisdom")
