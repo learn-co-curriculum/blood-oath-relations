@@ -13,4 +13,11 @@ class BloodOath
     def self.all
         @@all
     end
+
+    def self.first_oath
+        sorted = self.all.sort_by do |find|
+            find.initiation_date
+        end
+        sorted[0].follower
+    end
 end

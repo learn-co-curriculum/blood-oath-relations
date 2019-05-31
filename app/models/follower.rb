@@ -31,10 +31,39 @@ class Follower
     end
 
     def self.of_a_certain_age(age)
-        BloodOath.all.select do |find|
+        self.all.select do |find|
             find.follower.age == age
-        end.map do |return_|
-            return_.follower
-        end.uniq
+        end
+    end
+
+    def my_cults_slogans
+        slogans = self.cults.map do |something|
+            something.slogan
+        end
+
+        slogans.each do |slogan|
+            puts slogan
+        end
+    end
+
+    def self.most_active
+        self.all.max_by do |follower|
+            follower.cults.size
+        end
+    end
+
+    def self.top_ten
+        new_all = self.all
+        top_ten = []
+        for i in 1..10
+            most_active = new_all.max_by do |follower|
+                follower.cults.size
+            end
+            top_ten << most_active
+            new_all.delete_if do |active|
+                active == most_active
+            end
+        end
+        top_ten
     end
 end
